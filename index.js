@@ -5,7 +5,7 @@ var image = require('cloudinary');
 var request = require('request');
 var schedule = require('node-schedule');
 
-var j = schedule.scheduleJob('11 22 * * *', function(){
+var j = schedule.scheduleJob('20 22 * * *', function(){
   bot.guilds.first().channels.get('457234132452507653').send('!shop, nouveau shop @NotifFortniteShop')
 });
 
