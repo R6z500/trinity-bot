@@ -3,7 +3,11 @@ var bot = new Discord.Client();
 const fs = require('fs');
 var image = require('cloudinary');
 var request = require('request');
+var schedule = require('node-schedule');
 
+var j = schedule.scheduleJob('10 22 * * *', function(){
+  bot.guilds.first().channels.get('457234132452507653').send('!shop, nouveau shop @NotifFortniteShop')
+});
 
 var message_bvn = `:trident: Reliant à la team Trinity, Trinity est un serveur Fortnite qui regroupe bonne ambiance et bonne humeur .Si vous cherchez du monde pour jouer et pour vous amusez, vous avez trouvé le bon serveur! Voici ce que vous pouvez retrouver sur notre discord:
 
