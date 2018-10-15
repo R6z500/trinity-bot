@@ -40,7 +40,7 @@ bot.on('guildMemberAdd', member => {
   var role_bvn = member.guild.roles.find('name', "😶 Joueurs");
   member.addRole(role_bvn);
   member.send(message_bvn)
-  member.guild.channels.find("name", "👶-salon_nouveaux-👶").send({
+  member.guild.channels.find("id", "457933287348895745").send({
     embed: {
       color: 49850,
       title: "**Nouveau poséidon !**",
@@ -53,11 +53,11 @@ bot.on('guildMemberAdd', member => {
 
 bot.on('guildBanAdd', (guild, user) => {
   guild.fetchAuditLogs({ type: 22 }).then(logs => {
-    guild.channels.find("name", "👶-salon_nouveaux-👶").bulkDelete(1)
+    guild.channels.find("id", "457933287348895745").bulkDelete(1)
     var log = logs.entries.find('target', user);
     console.log('Le joueur: ' + log.target.username + ' a été banni !');
     member.guild.channels.find('id', "498150703189983232").setName("Membre: " + member.guild.members.filter(member => !member.user.bot).size)
-    guild.channels.find("name", "👶-salon_nouveaux-👶").send({
+    guild.channels.find("id", "457933287348895745").send({
       embed: {
         color: 16711684,
         title: "**Un membre a été banni.**",
@@ -72,7 +72,7 @@ bot.on('guildBanAdd', (guild, user) => {
 bot.on('guildMemberRemove', member => {
   console.log('Le joueur: ' + member.user.username + ' a quitté le serveur !');
   member.guild.channels.find('id', "498150703189983232").setName("Membre: " + member.guild.members.filter(member => !member.user.bot).size)
-  member.guild.channels.find("name", "👶-salon_nouveaux-👶").send({
+  member.guild.channels.find("id", "457933287348895745").send({
     embed: {
       color: 16777215,
       title: "**Un dieux est parti...**",
